@@ -160,10 +160,18 @@
                                     <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T8V-UB-Tos"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTq-Y9-DLP">
+                                <rect key="frame" x="35" y="535" width="251" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="NTq-Y9-DLP" id="2GW-mc-hbS"/>
                         <outletCollection property="cardButtons" destination="VAx-2O-3ys" id="JQO-rF-dxj"/>
                         <outletCollection property="cardButtons" destination="9N0-eC-a9a" id="zfR-PU-Zjb"/>
                         <outletCollection property="cardButtons" destination="FCo-mW-tIs" id="aeg-MT-t2P"/>
