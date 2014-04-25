@@ -40,12 +40,17 @@
     return _deck;
 }
 
-
-
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
+    [self updateUI];
+}
+
+- (IBAction)newGame
+{
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                  usingDeck:[self createDeck]];
     [self updateUI];
 }
 
