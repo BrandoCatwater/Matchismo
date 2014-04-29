@@ -17,5 +17,8 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly)NSInteger score;
+@property (nonatomic)NSInteger gameMode;
+@property (nonatomic, readonly) NSArray *lastChosenCards;
+@property (nonatomic, readonly) NSInteger lastScore;
 
 @end
