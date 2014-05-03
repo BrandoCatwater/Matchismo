@@ -28,4 +28,11 @@
     return score;
 }
 
+- (NSUInteger)numberOfMatchingCards
+{
+    if (!_numberOfMatchingCards) _numberOfMatchingCards = 2;
+    return _numberOfMatchingCards;
+}
+
+
 @end

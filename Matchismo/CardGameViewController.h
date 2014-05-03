@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface CardGameViewController : UIViewController
-@property (weak, nonatomic) UISegmentedControl *gameSwitch;
+
+- (Deck *)createDeck;
+
 
 @end

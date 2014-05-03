@@ -7,8 +7,6 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayingCard.h"
-#import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
 
 
@@ -25,16 +23,7 @@
 @implementation CardGameViewController
 - (IBAction)matchMode:(UISegmentedControl *)sender {
     
-    NSInteger selectedSegment = sender.selectedSegmentIndex;
-    
-    if (selectedSegment == 0)
-    {
-        self.game.gameMode = 1;
-        
-    } else if (selectedSegment == 1) {
 
-        self.game.gameMode = 2;
-    }
 }
 
 -(CardMatchingGame *) game
@@ -50,9 +39,9 @@
     
 }
 
-- (Deck *)createDeck
+- (Deck *)createDeck //abstract
 {
-    return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 - (Deck *)deck
@@ -63,7 +52,7 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    self.gameSwitch.enabled = NO;
+
     int cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
