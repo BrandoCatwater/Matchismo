@@ -69,13 +69,15 @@
 
 + (NSArray *)validSymbols
 {
-    return @[@"▲",@"●",@"■"];
+    
+    return @[@"oval", @"squiggle", @"diamond"];
+    //return @[@"▲",@"●",@"■"];
 }
 
 
 + (NSArray *)validShading
 {
-    return @[@"Empty",@"Stripped",@"Solid"];
+    return @[@"Empty",@"Striped",@"Solid"];
 }
 
 
