@@ -60,6 +60,32 @@
     return score;
 }
 
+- (NSArray *)cardsFromText:(NSString *)text
+{
+    NSString *pattern = [NSString stringWithFormat:@"(%@):(%@):(%@):(\\d+)",
+                         [[SetCard validSymbols] componentsJoinedByString:@"|"],
+                         [[SetCard validColors] componentsJoinedByString:@"|"],
+                         [[SetCard validShading] componentsJoinedByString:@"|"]];
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    if (error) return nil;
+    NSArray *matches = [regex matchesInString:text
+                                      options:0
+                                        range:NSMakeRange(0, 1)];
+    if (![matches count]) return nil;
+    NSMutableArray *setCards = [[NSMutableArray alloc] init];
+    for (NSTextCheckingResult *match in matches) {
+        SetCard *setCard = [[SetCard alloc] init];
+        setCard.symbol = @"1";
+        setCard.color = @"1";
+        setCard.shading = @"1";
+        setCard.number = 1;
+        [setCards addObject:setCard];
+    }
+    return setCards;
+}
 
 + (NSArray *)validColors
 {

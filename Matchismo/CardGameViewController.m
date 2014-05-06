@@ -8,6 +8,7 @@
 
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
+#import "HistoryViewController.h"
 
 
 @interface CardGameViewController ()
@@ -17,7 +18,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSelect;
-@property (weak, nonatomic) IBOutlet UILabel *flipDescription;
+
 @end
 
 @implementation CardGameViewController
@@ -111,6 +112,18 @@
 {
     return [UIImage imageNamed:card.isChosen ? @"CardFront" : @"CardBack"];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show History"]) {
+        if ([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
+            [segue.destinationViewController setHistory:self.flipHistory];
+        }
+    }
+}
+
+
 
 
 

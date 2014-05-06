@@ -13,6 +13,7 @@
 @property (strong,nonatomic) NSString *symbol;
 @property (strong,nonatomic) NSString *shading;
 @property (nonatomic) NSUInteger number;
+- (NSArray *)cardsFromText:(NSString *)text;
 
 + (NSArray *)validColors;
 + (NSArray *)validSymbols;
